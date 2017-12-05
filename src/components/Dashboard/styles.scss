@@ -1,0 +1,10 @@
+:local(.container) {
+    display: flex;
+    margin: -8px;
+}
+:local(.sideList) {
+    flex-basis: 20%;
+}
+:local(.content) {
+    flex-basis: 80%;
+}

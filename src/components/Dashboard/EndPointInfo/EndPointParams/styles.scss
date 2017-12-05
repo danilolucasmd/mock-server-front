@@ -1,0 +1,13 @@
+:local(.container) {
+    display: flex;
+}
+:local(.method) {
+    flex-basis: 10%;
+    width: 100%;
+}
+:local(.route) {
+    flex-basis: 85%;
+}
+:local(.timeout) {
+    flex-basis: 5%;
+}

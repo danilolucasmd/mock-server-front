@@ -2,15 +2,7 @@ import React from 'react';
 import { FloatingActionButton } from 'material-ui';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 import Response from './Response';
-
-const styles = {
-    addContainer: {
-        display: 'flex',
-        width: '100%',
-        justifyContent: 'center',
-        marginTop: 20,
-    },
-};
+import styles from './styles.css';
 
 const ResponseList = ({ responses, use, onAdd, onChangeUse, onChangeResponseCode, onChangeResponseData }) => (
     <div>
@@ -25,7 +17,7 @@ const ResponseList = ({ responses, use, onAdd, onChangeUse, onChangeResponseCode
                 onChangeData={ event => onChangeResponseData(key, event.target.value) }
             />
         )}
-        <div style={ styles.addContainer }>
+        <div className={ styles.addContainer }>
             <FloatingActionButton mini={ true } onClick={ onAdd }>
                 <ContentAdd />
             </FloatingActionButton>

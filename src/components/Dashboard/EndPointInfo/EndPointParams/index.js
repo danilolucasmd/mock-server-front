@@ -1,28 +1,10 @@
 import React from 'react';
 import { TextField, SelectField, MenuItem } from 'material-ui';
-
-const styles = {
-    container: {
-        display: 'flex',
-    },
-    method: {
-        flexBasis: '10%',
-        width: '100%',
-    },
-    route: {
-        flexBasis: '85%',
-    },
-    timeout: {
-        flexBasis: '5%',
-    },
-    inputTimeout: {
-        textAlign: 'center',
-    },
-};
+import styles from './styles.css';
 
 const EndPointParams = ({ method, route, timeout, onChangeMethod, onChangeRoute, onChangeTimeout }) => (
-    <div style={ styles.container }>
-        <div style={ styles.method }>
+    <div className={ styles.container }>
+        <div className={ styles.method }>
             <SelectField
                 fullWidth={ true }
                 autoWidth={ true }
@@ -48,7 +30,7 @@ const EndPointParams = ({ method, route, timeout, onChangeMethod, onChangeRoute,
                 <MenuItem value='VIEW' primaryText='VIEW' />
             </SelectField>
         </div>
-        <div style={ styles.route }>
+        <div className={ styles.route }>
             <TextField
                 fullWidth={ true }
                 name='inputRoute'
@@ -57,12 +39,14 @@ const EndPointParams = ({ method, route, timeout, onChangeMethod, onChangeRoute,
                 onChange={ event => onChangeRoute(event.target.value) }
             />
         </div>
-        <div style={ styles.timeout }>
+        <div className={ styles.timeout }>
             <TextField
                 fullWidth={ true }
                 name='inputTimeout'
                 underlineShow={ false }
-                inputStyle={ styles.inputTimeout }
+                inputStyle={{
+                    textAlign: 'center',
+                }}
                 value={ timeout }
                 onChange={ event => onChangeTimeout(Number(event.target.value)) }
                 type='number'

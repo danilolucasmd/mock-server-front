@@ -3,15 +3,10 @@ import * as actions from 'actions';
 import { connect } from 'react-redux';
 import EndPointParams from './EndPointParams';
 import ResponseList from './ResponseList';
-
-const styles = {
-    container: {
-        padding: 20,
-    }
-};
+import styles from './styles.css';
 
 const EndPointInfo = (props) => (
-    <div style={ styles.container }>
+    <div className={ styles.container }>
         <EndPointParams
             method={ props.endPointInfo.method }
             route={ props.endPointInfo.route }

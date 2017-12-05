@@ -5,6 +5,8 @@
   "dependencies": {
     "axios": "^0.17.1",
     "material-ui": "^0.19.4",
+    "node-sass-chokidar": "0.0.3",
+    "npm-run-all": "^4.1.2",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
     "react-redux": "^5.0.6",
@@ -13,8 +15,12 @@
     "redux-form": "^7.2.0"
   },
   "scripts": {
-    "start": "NODE_PATH=src/ react-scripts start",
-    "build": "NODE_PATH=src/ react-scripts build",
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "start-js": "NODE_PATH=src/ react-scripts start",
+    "start": "npm-run-all -p watch-css start-js",
+    "build-js": "NODE_PATH=src/ react-scripts build",
+    "build": "npm-run-all build-css build-js",
     "test": "NODE_PATH=src/ react-scripts test --env=jsdom",
     "eject": "NODE_PATH=src/ react-scripts eject"
   }

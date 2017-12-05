@@ -5,14 +5,7 @@ import { List, Subheader } from 'material-ui';
 import { FloatingActionButton } from 'material-ui';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 import EndPoint from './EndPoint';
-
-const styles = {
-    addContainer: {
-        display: 'flex',
-        justifyContent: 'center',
-        marginTop: 20,
-    }
-};
+import styles from './styles.css';
 
 class EndPointList extends Component {
     componentDidMount() {
@@ -33,7 +26,7 @@ class EndPointList extends Component {
                         />
                     )}
                 </List>
-                <div style={ styles.addContainer }>
+                <div className={ styles.addContainer }>
                     <FloatingActionButton mini={ true } onClick={ () => this.props.newEndPoint() }>
                         <ContentAdd/>
                     </FloatingActionButton>

@@ -1,0 +1,28 @@
+:local(.card) {
+  margin: 5; }
+
+:local(.textArea) {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border-radius: 4px;
+  box-sizing: border-box; }
+
+:local(.inputNormal) {
+  border: 1px solid #ccc; }
+
+:local(.inputError) {
+  border: 1px solid #a94442; }
+
+:local(.cardHeader) {
+  display: flex;
+  width: 100%;
+  align-items: center; }
+
+:local(.cardHeaderToggle) {
+  flex-basis: 20%; }
+
+:local(.cardHeaderResponse) {
+  flex-basis: 80%;
+  padding-left: 10px; }
